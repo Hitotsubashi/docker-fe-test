@@ -1,11 +1,21 @@
 pipeline {
-    agent { docker 'node:latest' }
+    agent any
+
     stages {
-        stage('Notify') {
+        stage('Build') {
             steps {
-                sh 'echo "pull message"'
+                echo 'Building..'
             }
         }
- 
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
